@@ -1,8 +1,4 @@
 /node_modules
 /keypair.json
-
-# Source code directories
-src/instructions/
-src/main.ts
 # Environment variables
 .env

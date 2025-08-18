@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import PTokenCalculator from './PTokenCalculator.js'
+import PTokenCalculator from './PTokenCalculator'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

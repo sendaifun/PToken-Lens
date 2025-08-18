@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { TransactionAnalyzer } from "../utils/transactionAnalyzer.js"
-import type { AnalyzedTransaction, Network } from "../types/index.js"
+import { TransactionAnalyzer } from "../utils/transactionAnalyzer"
+import type { AnalyzedTransaction, Network } from "../types/index"
 
 export function useTransactionAnalysis() {
   const [isAnalyzing, setIsAnalyzing] = useState(false)

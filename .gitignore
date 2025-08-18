@@ -3,7 +3,6 @@
 
 # Source code directories
 src/instructions/
-src/utils/
 src/main.ts
 # Environment variables
 .env

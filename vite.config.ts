@@ -8,6 +8,17 @@ export default defineConfig({
     open: true
   },
   build: {
-    outDir: 'dist-frontend'
+    outDir: 'dist-frontend',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          solana: ['@solana/web3.js']
+        }
+      }
+    }
+  },
+  define: {
+    global: 'globalThis'
   }
 })

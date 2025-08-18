@@ -32,11 +32,11 @@ export const TRANSACTION_TYPES = {
   UiAmountToAmount: { ptokenCU: 875, splTokenCU: 3161, supported: true },
 } as const
 
-// Helius RPC configuration
-export const HELIUS_CONFIG = {
-  apiKey: "2919d1db-d1eb-46e2-939e-6314f988b459",
-  devnet: "https://devnet.helius-rpc.com",
-  mainnet: "https://mainnet.helius-rpc.com",
+// RPC configuration
+export const RPC_CONFIG = {
+  apiKey: import.meta.env.VITE_API_KEY,
+  devnet: import.meta.env.VITE_DEVNET_RPC,
+  mainnet: import.meta.env.VITE_MAINNET_RPC,
 } as const
 
 // Base fee for Solana transactions

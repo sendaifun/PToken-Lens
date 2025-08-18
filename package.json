@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/createMint.js",
     "dev": "tsc --watch",
-    "build": "tsc",
+    "build": "vite build",
     "frontend": "vite",
     "frontend:build": "vite build",
     "frontend:preview": "vite preview"

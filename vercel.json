@@ -1,0 +1,16 @@
+{
+  "buildCommand": "pnpm run frontend:build",
+  "outputDirectory": "dist-frontend",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "functions": {
+    "src/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}

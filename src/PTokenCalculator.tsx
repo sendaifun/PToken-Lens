@@ -6,7 +6,7 @@ import { Analyzer } from "./components/Analyzer.js"
 import type { Mode, Network } from "./types/index.js"
 
 export default function PTokenCalculator() {
-  const [mode, setMode] = useState<Mode>("calculator")
+  const [mode, setMode] = useState<Mode>("analyzer")
   const [network, setNetwork] = useState<Network>("devnet")
 
   const handleCalculate = (amount: number) => {
@@ -22,10 +22,17 @@ export default function PTokenCalculator() {
     <div className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">P-Token SOL Savings Calculator</h1>
-          <p className="text-xl text-gray-600">Calculate your SOL savings with P-Token's compute efficiency</p>
-        </div>
+                            <div className="text-center mb-12">
+                      <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                        {mode === "calculator" ? "P-Token SOL Savings Calculator" : "P-Token Transaction Analyzer"}
+                      </h1>
+                      <p className="text-xl text-gray-600">
+                        {mode === "calculator" 
+                          ? "Calculate your SOL savings with P-Token's compute efficiency"
+                          : "Analyze real Solana transactions and see P-Token's performance improvements"
+                        }
+                      </p>
+                    </div>
 
         {/* Mode Selection */}
         <div className="flex justify-center mb-8">

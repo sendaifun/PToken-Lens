@@ -54,7 +54,7 @@ export function Analyzer({ network, onNetworkChange }: AnalyzerProps) {
             Mainnet
           </Button>
         </div>
-        <p className="text-sm text-gray-500 mt-2">Using Helius RPCs for reliable access</p>
+
       </div>
 
       {/* Transaction Input */}
@@ -98,11 +98,7 @@ export function Analyzer({ network, onNetworkChange }: AnalyzerProps) {
                 <p className="text-sm font-mono">{analyzedTransaction.signature}</p>
               </div>
             </div>
-            <div className="mt-4 p-3 bg-white/10 rounded-lg">
-              <p className="text-blue-100 text-sm">
-                💡 <strong>Smart Detection:</strong> This transaction contains SPL Token operations that were automatically identified from program logs.
-              </p>
-            </div>
+
           </Card>
 
           {/* Instruction Breakdown */}
@@ -137,16 +133,23 @@ export function Analyzer({ network, onNetworkChange }: AnalyzerProps) {
 
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
-                <h4 className="text-lg font-semibold text-gray-800 mb-3">Current Transaction</h4>
+                <h4 className="text-lg font-semibold text-gray-800 mb-3">SPL Token Operations</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Compute Units:</span>
+                    <span className="text-gray-600">Total Compute Units:</span>
                     <span className="font-semibold">{analyzedTransaction.totalCU.toLocaleString()} CU</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Priority Fee:</span>
                     <span className="font-semibold">{analyzedTransaction.totalPriorityFeeSol.toFixed(6)} SOL</span>
                   </div>
+                  {analyzedTransaction.instructionBreakdown && analyzedTransaction.instructionBreakdown.length > 1 && (
+                    <div className="mt-3 pt-3 border-t border-gray-200">
+                      <p className="text-xs text-gray-500 text-center">
+                        {analyzedTransaction.instructionBreakdown.length} SPL Token instructions
+                      </p>
+                    </div>
+                  )}
                 </div>
               </Card>
 
@@ -161,6 +164,13 @@ export function Analyzer({ network, onNetworkChange }: AnalyzerProps) {
                     <span className="text-gray-600">Priority Fee:</span>
                     <span className="font-semibold text-gray-800">{analyzedTransaction.ptokenPriorityFeeSol.toFixed(6)} SOL</span>
                   </div>
+                  {analyzedTransaction.instructionBreakdown && analyzedTransaction.instructionBreakdown.length > 1 && (
+                    <div className="mt-3 pt-3 border-t border-gray-200">
+                      <p className="text-xs text-gray-500 text-center">
+                        Based on {analyzedTransaction.instructionBreakdown.length} SPL Token instructions
+                      </p>
+                    </div>
+                  )}
                 </div>
               </Card>
 

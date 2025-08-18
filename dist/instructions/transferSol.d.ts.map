@@ -1,0 +1,1 @@
+{"version":3,"file":"transferSol.d.ts","sourceRoot":"","sources":["../../src/instructions/transferSol.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,iBAAiB,EAAE,MAAM,aAAa,CAAC;AAErD,MAAM,WAAW,iBAAiB;IAChC,MAAM,EAAE,iBAAiB,CAAC;IAC1B,WAAW,EAAE,MAAM,CAAC;IACpB,MAAM,EAAE,MAAM,CAAC;CAChB;AAED,wBAAgB,4BAA4B,CAAC,MAAM,EAAE,iBAAiB,kJAUrE"}

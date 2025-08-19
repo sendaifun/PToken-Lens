@@ -34,7 +34,7 @@ export const TRANSACTION_TYPES = {
 
 // RPC configuration
 export const RPC_CONFIG = {
-  apiKey: import.meta.env.VITE_API_KEY,
+  // apiKey: import.meta.env.VITE_API_KEY,
   devnet: import.meta.env.VITE_DEVNET_RPC,
   mainnet: import.meta.env.VITE_MAINNET_RPC,
 } as const

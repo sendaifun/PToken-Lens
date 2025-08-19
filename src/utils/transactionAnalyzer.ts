@@ -7,8 +7,8 @@ export class TransactionAnalyzer {
 
   constructor(network: Network) {
     const rpcUrl = network === "devnet" 
-      ? `${RPC_CONFIG.devnet}/?api-key=${RPC_CONFIG.apiKey}`
-      : `${RPC_CONFIG.mainnet}/?api-key=${RPC_CONFIG.apiKey}`
+      ? `${RPC_CONFIG.devnet}`
+      : `${RPC_CONFIG.mainnet}`
     
     this.connection = new Connection(rpcUrl, "confirmed")
   }

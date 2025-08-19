@@ -39,11 +39,10 @@ export function Calculator({ onCalculate }: CalculatorProps) {
             <Button
               key={amount}
               onClick={() => handlePresetClick(amount)}
-              className={`px-6 py-3 text-lg font-semibold rounded-lg transition-colors ${
-                selectedAmount === amount
+              className={`px-6 py-3 text-lg font-semibold rounded-lg transition-colors ${selectedAmount === amount
                   ? "bg-gray-900 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-300"
-              }`}
+                }`}
             >
               {amount.toLocaleString()} txns
             </Button>
@@ -51,13 +50,13 @@ export function Calculator({ onCalculate }: CalculatorProps) {
         </div>
 
         <div className="flex justify-center items-center gap-4">
-                      <Input
-              type="number"
-              placeholder="Enter custom amount"
-              value={customAmount}
-              onChange={handleCustomAmountChange}
-              className="w-64 px-4 py-3 text-lg border-2 border-gray-300 rounded-lg focus:border-gray-900 focus:outline-none"
-            />
+          <Input
+            type="number"
+            placeholder="Enter custom amount"
+            value={customAmount}
+            onChange={handleCustomAmountChange}
+            className="w-64 px-4 py-3 text-lg border-2 border-gray-300 rounded-lg focus:border-gray-900 focus:outline-none"
+          />
           <Button
             onClick={handleCustomCalculate}
             className="px-6 py-3 text-lg font-semibold bg-gray-900 hover:bg-gray-800 text-white rounded-lg transition-colors"
@@ -66,6 +65,19 @@ export function Calculator({ onCalculate }: CalculatorProps) {
           </Button>
         </div>
       </div>
+
+      {/* Savings Display */}
+      <Card className="p-6 bg-gray-900 text-white text-center rounded-xl shadow-sm mb-8">
+        <h3 className="text-2xl font-bold mb-2">
+          {(selectedAmount * 0.000016561).toFixed(6)} SOL Saved
+        </h3>
+        <p className="text-lg text-gray-200">
+          {((16.561 / 35.665) * 100).toFixed(1)}% compute reduction with P-Token
+        </p>
+        <p className="text-sm text-gray-300 mt-2">
+          Based on {selectedAmount.toLocaleString()} SPL Token txns
+        </p>
+      </Card>
 
       {/* Results Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -82,6 +94,7 @@ export function Calculator({ onCalculate }: CalculatorProps) {
             </div>
           </div>
         </Card>
+
 
         <Card className="p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
           <h3 className="text-2xl font-bold text-gray-800 mb-4">P-Token</h3>
@@ -109,13 +122,13 @@ export function Calculator({ onCalculate }: CalculatorProps) {
               <span className="text-gray-600 text-sm">{(selectedAmount * 35.665).toFixed(0)} CU</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-8">
-              <div 
+              <div
                 className="bg-gray-900 h-8 rounded-full transition-all duration-500 ease-out"
                 style={{ width: "100%" }}
               ></div>
             </div>
           </div>
-          
+
           {/* P-Token Bar */}
           <div>
             <div className="flex justify-between items-center mb-2">
@@ -123,32 +136,19 @@ export function Calculator({ onCalculate }: CalculatorProps) {
               <span className="text-gray-600 text-sm">{(selectedAmount * 19.104).toFixed(0)} CU</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-8">
-              <div 
+              <div
                 className="bg-gray-600 h-8 rounded-full transition-all duration-500 ease-out"
                 style={{ width: `${((selectedAmount * 19.104) / (selectedAmount * 35.665)) * 100}%` }}
               ></div>
             </div>
           </div>
         </div>
-        
+
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-500">
             Visual representation of compute unit savings with P-Token
           </p>
         </div>
-      </Card>
-
-      {/* Savings Display */}
-      <Card className="p-6 bg-gray-900 text-white text-center rounded-xl shadow-sm">
-        <h3 className="text-2xl font-bold mb-2">
-          {(selectedAmount * 0.000016561).toFixed(6)} SOL Saved
-        </h3>
-        <p className="text-lg text-gray-200">
-          {((16.561 / 35.665) * 100).toFixed(1)}% compute reduction with P-Token
-        </p>
-        <p className="text-sm text-gray-300 mt-2">
-          Based on {selectedAmount.toLocaleString()} SPL Token txns
-        </p>
       </Card>
 
       {/* Token Lifecycle Explanation */}
@@ -174,7 +174,7 @@ export function Calculator({ onCalculate }: CalculatorProps) {
         </div>
         <div className="mt-4 p-3 bg-gray-50 rounded-lg">
           <p className="text-sm text-gray-600">
-            <strong>Note:</strong> This excludes ATA (Associated Token Account) and System program overhead, 
+            <strong>Note:</strong> This excludes ATA (Associated Token Account) and System program overhead,
             which remain the same for both SPL Token and P-Token implementations.
           </p>
         </div>

@@ -5,7 +5,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
+    open: true,
+    allowedHosts: ['d88d55ef24e2.ngrok-free.app']
   },
   build: {
     outDir: 'dist-frontend',
